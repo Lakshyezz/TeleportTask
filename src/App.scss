@@ -1,0 +1,194 @@
+/* App.scss */
+
+@mixin mobile{
+  @media (max-width: 738px) {
+      // background-color: orange;
+      @content;
+  }
+}
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @include mobile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.task-input {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 32px;
+  
+  @include mobile{
+    width: 100%;
+    margin-bottom: 0px;
+}
+  .input-div{
+    display: flex;
+    gap: 20px;
+      input{
+        height: 40px;
+        width: 90%;
+        border-radius: 8px;
+        border: 1px solid darkgrey;
+        padding-left: 10px;
+      }
+      button{
+        cursor: pointer;
+        padding: 6px 20px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: none;
+        background-color: rgb(16, 16, 16);
+        color: rgb(237, 234, 234);
+      }
+    }
+    
+    .label-div{
+      display: flex;
+      justify-content: space-between;
+      @include mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+       scale: .8;
+    }
+      .format{
+        display: flex;
+        gap: 8px;
+        button{
+          cursor: pointer;
+          padding: 6px 12px;
+          font-size: 18px;
+          border-radius: 8px;
+          border: none;
+          background-color: rgb(107, 107, 107);
+          color: rgb(237, 234, 234);
+        }
+    }
+    .tags{
+      display: flex;
+      gap: 8px;
+      button{
+        cursor: pointer;
+        padding: 6px 12px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: none;
+        background-color: rgb(107, 107, 107);
+        color: rgb(237, 234, 234);
+      }
+    }
+  }
+}
+
+.task-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include mobile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    border-radius: 8px;
+}
+  .doing{
+    background-color: rgb(211, 211, 211);
+    border-radius: 8px;
+  }
+  
+  .done{
+    background-color: rgb(211, 211, 211);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    svg{
+      align-self: center;
+    }
+    p{
+      font-size: 18px;
+      color: grey;
+      font-weight: bold;
+      align-self: center;
+    }
+  }
+}
+
+.task-list {
+  width: 95%;
+  padding: 10px;
+
+
+
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #7c7c7c;
+    background-color: white;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px 12px;
+    .delete{
+      cursor: pointer;
+      padding: 6px 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      background-color: rgb(228, 46, 46);
+      color: rgb(237, 234, 234);
+    }
+    .done{
+      cursor: pointer;
+      padding: 3px 6px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      background-color: rgb(32, 193, 48);
+      color: rgb(237, 234, 234);
+    }
+
+    .info{
+      display: flex;
+      align-items: center;
+
+    }
+  }
+}
+
+
+
+.task-item .tag {
+  margin-left: 5px;
+  background-color: #f0f0f0;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.task-item button {
+  margin-left: 10px;
+}
